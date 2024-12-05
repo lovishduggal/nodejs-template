@@ -2,7 +2,7 @@ import app from './src/app';
 import { config } from './src/config/config';
 import connectDB from './src/config/db';
 
-const startServer = async () => {
+async function startServer() {
     // Connect to MongoDB
     await connectDB();
 
@@ -10,6 +10,6 @@ const startServer = async () => {
     app.listen(port, () => {
         console.log(`Server is running on port ${port}`);
     });
-};
+}
 
 startServer();

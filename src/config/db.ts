@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import { config } from './config';
 
-const connectDB = async () => {
+async function connectDB() {
     try {
         mongoose.connection.on('connected', () => {
             console.log('MongoDB connected');
@@ -16,6 +16,6 @@ const connectDB = async () => {
         console.error('Error connecting to MongoDB:', error);
         process.exit(1);
     }
-};
+}
 
 export default connectDB;
